@@ -4,7 +4,7 @@ FROM python:3.6-alpine
 
 #2: Copiar os arquivos de dependecia a nível da aplicação
 
-COPY app/requirements.txt /tmp
+COPY ./requirements.txt /tmp
 
 #3: Instalar as dependencias
 RUN pip install -r /tmp/requirements.txt
@@ -12,7 +12,7 @@ RUN pip install -r /tmp/requirements.txt
 RUN mkdir /app
 
 #5: Copiar aplicação para diretório específico 
-COPY app/* /app/
+COPY . /app/
 
 #6: Mudar o diretório padrão 
 WORKDIR /app
